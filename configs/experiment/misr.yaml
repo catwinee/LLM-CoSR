@@ -1,0 +1,20 @@
+# @package _global_
+
+defaults:
+  - override /trainer: gpu.yaml
+  - override /model: misr.yaml
+  - override /datamodule: partial_word_bert.yaml
+  - override /callbacks: wandb.yaml
+  - override /logger: wandb.yaml
+
+seed: 12345
+
+logger:
+  wandb:
+    name: 'MISR'
+    tags: ['partial', 'BERT']
+
+model:
+  mashup_embed_path: embeddings/word_bert_mashup_embeddings.npy
+  api_embed_path: embeddings/partial/word_bert_api_embeddings.npy
+  conv_in_channels: 768

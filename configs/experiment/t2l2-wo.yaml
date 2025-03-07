@@ -1,0 +1,24 @@
+# @package _global_
+
+defaults:
+  - override /trainer: gpu.yaml
+  - override /model: t2l2_without_propagation.yaml
+  - override /datamodule: partial_text_bert.yaml
+  - override /callbacks: wandb.yaml
+  - override /logger: wandb.yaml
+
+seed: 1
+
+logger:
+  wandb:
+    name: 'T2L2-W/O-propagation'
+    tags: ['partial', 'BERT']
+
+datamodule:
+  api_index: true
+
+model:
+  mashup_embed_channels: 768
+  api_embed_path: embeddings/partial/text_bert_api_embeddings.npy
+  api_embed_channels: 768
+  mlp_output_channels: 300

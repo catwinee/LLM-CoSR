@@ -1,0 +1,24 @@
+# @package _global_
+
+defaults:
+  - override /trainer: gpu.yaml
+  - override /model: mlp.yaml
+  - override /datamodule: partial_text_bert.yaml
+  - override /callbacks: wandb.yaml
+  - override /logger: wandb.yaml
+
+seed: 1
+
+logger:
+  wandb:
+    name: 'MLP'
+    tags: ['partial', 'BERT']
+
+model:
+  api_embed_path: embeddings/partial/text_bert_api_embeddings.npy
+  mashup_embed_channels: 768
+  mlp_output_channels: 300
+  lr: 0.001
+
+datamodule:
+  pair_in_training: true

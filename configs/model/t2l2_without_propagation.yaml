@@ -1,0 +1,10 @@
+_target_: src.models.t2l2_without_propagation.T2L2WithoutPropagation
+
+data_dir: ${data_dir}/api_mashup
+api_embed_path: embeddings/partial/text_bert_api_embeddings.npy
+mashup_embed_channels: 768
+api_embed_channels: 768
+mlp_output_channels: 300
+negative_samples_ratio: 5
+lr: 0.001
+weight_decay: 0.00001

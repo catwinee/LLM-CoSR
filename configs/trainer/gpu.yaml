@@ -1,0 +1,8 @@
+defaults:
+  - default
+
+accelerator: gpu
+devices: 1
+max_epochs: 300
+
+# ckpt_path: null

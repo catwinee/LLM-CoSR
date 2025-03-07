@@ -1,0 +1,22 @@
+# @package _global_
+
+defaults:
+  - override /trainer: gpu.yaml
+  - override /model: fisr.yaml
+  - override /datamodule: partial_text_bert.yaml
+  - override /callbacks: wandb.yaml
+  - override /logger: wandb.yaml
+
+seed: 12345
+
+logger:
+  wandb:
+    name: 'FISR'
+    tags: ['partial', 'BERT']
+
+datamodule:
+  pair_in_training: false
+
+model:
+  api_embed_path: embeddings/partial/text_bert_api_embeddings.npy
+  feature_dim: 768

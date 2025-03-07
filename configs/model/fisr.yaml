@@ -1,0 +1,8 @@
+_target_: src.models.fisr.FISR
+
+data_dir: ${data_dir}/api_mashup
+api_embed_path: embeddings/partial/text_bert_api_embeddings.npy
+feature_dim: 768
+negative_samples_ratio: 5
+lr: 0.0003
+weight_decay: 0.00001

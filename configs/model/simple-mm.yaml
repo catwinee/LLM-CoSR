@@ -1,0 +1,5 @@
+_target_: src.models.simple-mm.MM
+
+data_dir: ${data_dir}/api_mashup
+lr: 0.001
+weight_decay: 0.00001

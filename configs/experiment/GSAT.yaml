@@ -1,0 +1,28 @@
+# @package _global_
+
+defaults:
+  - override /trainer: gpu.yaml
+  - override /model: GSAT.yaml
+  - override /datamodule: partial_text_bert.yaml
+  # - override /datamodule: General.yaml
+  - override /callbacks: wandb.yaml
+  - override /logger: wandb.yaml
+
+seed: 12345
+
+logger:
+  wandb:
+    name: 'GSAT'
+    tags: ['partial', 'BERT']
+
+datamodule:
+  api_path: embeddings/partial/text_bert_api_embeddings.npy
+  mashup_path: embeddings/text_bert_mashup_embeddings.npy
+  pair_in_training: false
+  need_idx: true
+  need_val_idx: true
+
+# model:
+#   api_path: embeddings/partial/text_bert_api_embeddings.npy
+#   mashup_path: embeddings/text_bert_mashup_embeddings.npy
+#   hidden_channels: 800

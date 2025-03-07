@@ -1,0 +1,10 @@
+_target_: src.datamodules.GeneralDatamodule.GeneralDatamodule
+
+#data_dir: 'data/Youshu/standard'
+data_dir: '${data_dir}/Mashup/left_one_data'
+batch_size: 64
+num_workers: 1
+train_ratio: 0.6
+val_ratio: 0.2
+gpus: True
+dataset: 'Mashup' # 'Mashup' or 'Youshu'

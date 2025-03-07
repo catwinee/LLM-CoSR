@@ -1,0 +1,13 @@
+_target_: pytorch_lightning.Trainer
+
+devices: 1
+accelerator: "gpu"
+
+min_epochs: 1
+max_epochs: 100
+
+# number of validation steps to execute at the beginning of the training
+# num_sanity_val_steps: 0
+
+# ckpt path
+# ckpt_path: null

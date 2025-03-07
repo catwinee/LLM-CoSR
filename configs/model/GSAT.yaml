@@ -1,0 +1,28 @@
+_target_: src.models.GSAT.GSAT
+
+dataset: 'Mashup'
+data_dir: ${data_dir}/Mashup
+lr: 5e-4
+head_num: 12
+weight_decay: 1e-3
+embedding_model: 'openai'
+fine_tuning: False
+topk: [15, 5, 10]
+enhanced: False
+simple: False
+mode: 'tolerance' # 可选: 'cover', 'dependence', 'save', 'tolerance', 'count',除了tolerance都是越小越好
+tag_method: 'chatgpt' # 'manual' or 'chatgpt'
+alpha: 1
+R: 25
+sample_mode: 'highest'
+# lr: 8e-5, weight_decay: 1e-3, batch_size: 64是目前的sota
+
+# 另一套疑似sota的参数：
+#dataset: Mashup
+#data_dir: ${data_dir}/Mashup
+#lr: 5e-4
+#head_num: 12
+#weight_decay: 1e-3
+#embedding_model: 'openai'
+#fine_tuning: False
+#topk: [1, 5, 10]

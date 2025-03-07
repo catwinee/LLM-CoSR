@@ -1,0 +1,10 @@
+_target_: src.models.mtfm.MTFM
+
+embed_channels: 300
+num_api: 932
+text_len: 72
+conv_kernel_size: [2, 3, 4, 5]
+conv_num_kernel: 256
+feature_channels: 8
+lr: 1e-3
+weight_decay: 0.0005

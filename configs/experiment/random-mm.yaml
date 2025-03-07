@@ -1,0 +1,35 @@
+# @package _global_
+
+defaults:
+  - override /trainer: gpu.yaml
+  - override /model: random-mm.yaml
+  - override /datamodule: partial_text_bert.yaml
+  - override /callbacks: wandb.yaml
+  - override /logger: wandb.yaml
+
+seed: 1
+
+logger:
+  wandb:
+    name: 'Random-MM'
+    tags: ['partial', 'BERT']
+
+datamodule:
+  api_path: embeddings/partial/text_bert_api_embeddings.npy
+  mashup_path: embeddings/text_bert_mashup_embeddings.npy
+  # api_path: embeddings/partial/12pure-dim=256w_l=20cs=15wpn=20ns=5p=1.0q=1.0.npy
+  # mashup_path: embeddings/12pure-dim=256w_l=20cs=15wpn=20ns=5p=1.0q=1.0.npy
+  # api_path: embeddings/partial/12dim=256w_l=20cs=15wpn=20ns=5p=1.0q=1.0.npy
+  # mashup_path: embeddings/12dim=256w_l=20cs=15wpn=20ns=5p=1.0q=1.0.npy
+  pair_in_training: false
+  need_idx: true
+
+model:
+  api_path: embeddings/partial/text_bert_api_embeddings.npy
+  mashup_path: embeddings/text_bert_mashup_embeddings.npy
+  # api_path: embeddings/partial/12pure-dim=256w_l=20cs=15wpn=20ns=5p=1.0q=1.0.npy
+  # mashup_path: embeddings/12pure-dim=256w_l=20cs=15wpn=20ns=5p=1.0q=1.0.npy
+  # api_path: embeddings/partial/12dim=256w_l=20cs=15wpn=20ns=5p=1.0q=1.0.npy
+  # mashup_path: embeddings/12dim=256w_l=20cs=15wpn=20ns=5p=1.0q=1.0.npy
+  hidden_channels: 800
+  ord: "03"

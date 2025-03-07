@@ -1,0 +1,26 @@
+# @package _global_
+
+defaults:
+  - override /trainer: gpu.yaml
+  - override /model: simple-mm.yaml
+  - override /datamodule: partial_text_bert.yaml
+  - override /callbacks: wandb.yaml
+  - override /logger: wandb.yaml
+
+seed: 123
+
+logger:
+  wandb:
+    name: 'SimpleMM'
+    tags: ['partial', 'BERT']
+
+datamodule:
+  api_path: embeddings/partial/text_bert_api_embeddings.npy
+  mashup_path: embeddings/text_bert_mashup_embeddings.npy
+  pair_in_training: false
+  need_idx: false
+
+model:
+  api_path: embeddings/partial/text_bert_api_embeddings.npy
+  mashup_path: embeddings/text_bert_mashup_embeddings.npy
+  hidden_channels: 800

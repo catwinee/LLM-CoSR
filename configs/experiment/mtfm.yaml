@@ -1,0 +1,22 @@
+# @package _global_
+
+defaults:
+  - override /trainer: gpu.yaml
+  - override /model: mtfm.yaml
+  - override /datamodule: partial_word_bert.yaml
+  - override /callbacks: wandb.yaml
+  - override /logger: wandb.yaml
+
+seed: 12345
+
+logger:
+  wandb:
+    name: 'MTFM'
+    tags: ['partial', 'BERT']
+
+datamodule:
+  pair_in_training: False
+
+model:
+  embed_channels: 768
+  num_api: 932
