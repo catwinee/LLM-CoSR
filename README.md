@@ -69,13 +69,13 @@ Download dataset here(todo).
 # Quickstart
 
 ## Basic Experiment Execution
-```bash{title="Terminal"}
+```bash
 # Launch LLM-driven contrastive learning with predefined configuration
 python train.py experiment=contras-mm
 ```
 
 ## Customized Experiment Configuration
-```bash{title="Terminal"}
+```bash
 # Run text-to-latent experiment with deterministic seeding
 python train.py experiment=t2l2 ++seed=12345
 ```
