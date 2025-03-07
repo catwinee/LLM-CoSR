@@ -65,3 +65,17 @@ pip install -r requirements.txt
 The experimental dataset comprises service metadata collected from ProgrammableWeb, featuring two core components: 932 Web APIs and 4,557 mashups. These entries are interconnected through 7,139 explicit invocation records, forming dependency edges that capture service composition patterns in real-world web applications.
 
 Download dataset here(todo).
+
+# Quickstart
+
+## Basic Experiment Execution
+```bash{title="Terminal"}
+# Launch LLM-driven contrastive learning with predefined configuration
+python train.py experiment=contras-mm
+```
+
+## Customized Experiment Configuration
+```bash{title="Terminal"}
+# Run text-to-latent experiment with deterministic seeding
+python train.py experiment=t2l2 ++seed=12345
+```
