@@ -1,6 +1,12 @@
 # Introduction
 
-*LLM-CoSR* is a LLM-driven, GCL-based deep learning model to recommend apis for web service developers. It consists of 4 modules: (1) Service and user requirement encoding module, (2) LLM-driven invocation network denoising module, (3) Graph encoding and contrastive learning module, and (4) Negative sampling module.
+*LLM-CoSR* is a LLM-driven deep learning recommendation system based on a graph contrastive learning (GCL) framework.
+It is meticulously designed for API recommendation scenarios for web service developers.
+The architecture comprises four synergistic components:
+1. Service and user requirement encoding module;
+2. LLM-driven invocation network denoising module;
+3. Graph encoding and contrastive learning module;
+4. Negative sampling module.
 
 > This project is built on open source project [Lightning-Hydra-Template](https://github.com/ashleve/lightning-hydra-template).
 
@@ -64,7 +70,7 @@ pip install -r requirements.txt
 # Dataset
 The experimental dataset comprises service metadata collected from ProgrammableWeb, featuring two core components: 932 Web APIs and 4,557 mashups. These entries are interconnected through 7,139 explicit invocation records, forming dependency edges that capture service composition patterns in real-world web applications.
 
-Download dataset here(todo).
+Download dataset here(TODO).
 
 # Quickstart
 
