@@ -13,7 +13,7 @@ The architecture comprises four synergistic components:
 ## Motivation
 
 Existing approaches face three gaps: 
-1. Traditional QoS/matrix methods lack deep dependency modeling and cold-start adaptability due to manual feature engineering; 
+1. Traditional approaches (QoS, matrix factorization) rely on shallow features, failing in cold-start and multi-hop scenarios.
 2. Graph-based methods (GNNs/GCL) suffer from semantic inconsistency from unstable edge augmentation and rigid denoising assumptions; 
 3. LLM-enhanced techniques primarily refine auxiliary data rather than directly aligning semantic reasoning with graph structures. We propose a unified framework combining adaptive graph diffusion (preserving functional dependencies during denoising) and LLM-powered semantic coordination, aiming to resolve data sparsity, stabilize training, and enable interpretable service-requirement alignment.
 
