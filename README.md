@@ -13,7 +13,7 @@ The architecture comprises four synergistic components:
 ## Motivation
 
 Existing approaches face three gaps: 
-1. Traditional QoS/matrix methods lack deep dependency modeling and cold-start adaptability due to manual feature engineering; 
+1. Traditional approaches (QoS, matrix factorization) rely on shallow features, failing in cold-start and multi-hop scenarios.
 2. Graph-based methods (GNNs/GCL) suffer from semantic inconsistency from unstable edge augmentation and rigid denoising assumptions; 
 3. LLM-enhanced techniques primarily refine auxiliary data rather than directly aligning semantic reasoning with graph structures. We propose a unified framework combining adaptive graph diffusion (preserving functional dependencies during denoising) and LLM-powered semantic coordination, aiming to resolve data sparsity, stabilize training, and enable interpretable service-requirement alignment.
 
@@ -70,7 +70,26 @@ pip install -r requirements.txt
 # Dataset
 The experimental dataset comprises service metadata collected from ProgrammableWeb, featuring two core components: 932 Web APIs and 4,557 mashups. These entries are interconnected through 7,139 explicit invocation records, forming dependency edges that capture service composition patterns in real-world web applications.
 
-Download dataset here(TODO).
+
+# Data Augmentation
+
+We provide an LLM-driven data augmentation (denoising) tool to generate positive and negative views for graph contrastive learning.
+
+The augmentation script is located at `utils/augmentation.py`. It uses LLM to identify and remove "abnormal" edges based on node metadata (titles, tags, and descriptions).
+
+### Basic Usage
+```bash
+# Generate augmented views with a specific removal rate (e.g., 70%)
+python utils/augmentation.py 70
+```
+
+### Batch Generation
+You can use the provided shell script to generate multiple views for different rates:
+```bash
+bash utils/gen_all.sh
+```
+
+The generated views will be saved in `data/views/` as `.pkl` files, which are then used by the contrastive learning models (e.g., `contras-mm`).
 
 # Quickstart
 
